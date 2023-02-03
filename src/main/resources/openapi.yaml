@@ -92,7 +92,12 @@ components:
           example: '12345'
         email:
           type: string
+          format: email
           example: gmail.com
+        age:
+          type: number
+          minimum: 16
+          maximum: 88
     Product:
       type: object
       properties:

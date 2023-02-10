@@ -25,6 +25,7 @@ paths:
     post:
       description: this api is for login
       requestBody:
+        required: true
         content:
           application/json:
             schema:

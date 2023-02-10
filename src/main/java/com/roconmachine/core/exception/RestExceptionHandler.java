@@ -20,7 +20,6 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
@@ -28,6 +27,10 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 @ControllerAdvice
 @Slf4j
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Object> handleException(){
+        return buildResponseEntity(new ApiError(NOT_FOUND, "error not found", null));
+    }
 
 
     @Override
@@ -99,7 +102,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
                                                                       WebRequest request) {
         ApiError apiError = new ApiError(BAD_REQUEST);
         apiError.setMessage(String.format("The parameter '%s' of value '%s' could not be converted to type '%s'", ex.getName(), ex.getValue(), ex.getRequiredType().getSimpleName()));
-        apiError.setDebugMessage(ex.getMessage());
+        apiError.setDebugMessage(ex.getMessage() + " " + request.getHeaderNames());
         return buildResponseEntity(apiError);
     }
 

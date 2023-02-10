@@ -18,9 +18,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: string
+                type: string
+
   /login:
     post:
       description: this api is for login

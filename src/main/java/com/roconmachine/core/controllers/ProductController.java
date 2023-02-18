@@ -1,4 +1,4 @@
-package com.roconmachine.core;
+package com.roconmachine.core.controllers;
 
 import com.roconmachine.openapi.api.ProductApi;
 import com.roconmachine.openapi.model.Product;

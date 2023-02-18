@@ -85,6 +85,18 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!--		kafka-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.kafka</groupId>-->
+<!--			<artifactId>spring-kafka</artifactId>-->
+<!--			<version>2.7.8</version>-->
+<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams -->
+<!--		<dependency>-->
+<!--			<groupId>org.apache.kafka</groupId>-->
+<!--			<artifactId>kafka-streams</artifactId>-->
+<!--			<version>3.4.0</version>-->
+<!--		</dependency>-->
 
 		<!--		test section-->
 		<dependency>
@@ -133,7 +145,14 @@
 					</execution>
 				</executions>
 			</plugin>
-
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-surefire-plugin</artifactId>-->
+<!--				<version>2.19.1</version>-->
+<!--				<configuration>-->
+<!--					<testFailureIgnore>true</testFailureIgnore>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
 

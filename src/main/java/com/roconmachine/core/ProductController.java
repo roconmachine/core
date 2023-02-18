@@ -1,8 +1,6 @@
 package com.roconmachine.core;
 
-import com.roconmachine.openapi.api.PingApi;
 import com.roconmachine.openapi.api.ProductApi;
-import com.roconmachine.openapi.api.ProductApiDelegate;
 import com.roconmachine.openapi.model.Product;
 import org.springframework.http.ResponseEntity;
 
